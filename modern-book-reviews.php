@@ -11,7 +11,7 @@
  * Plugin Name:          Modern Book Reviews
  * Plugin URI:           https://github.com/mapindoor/modern-book-reviews
  * Description:          Buchrezensionen für WordPress – datenkompatibler, moderner und sicherer Ersatz für Recencio Book Reviews. Gutenberg-Sidebar, ISBN-Abruf, JSON-LD-Schema, Sternebewertungen.
- * Version:              1.1.1
+ * Version:              1.1.2
  * Requires at least:    6.4
  * Requires PHP:         8.2
  * Author:               mapindoor
@@ -23,7 +23,7 @@
 
 defined( 'WPINC' ) || exit;
 
-define( 'MBR_VERSION', '1.1.1' );
+define( 'MBR_VERSION', '1.1.2' );
 define( 'MBR_PLUGIN_FILE', __FILE__ );
 define( 'MBR_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'MBR_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
