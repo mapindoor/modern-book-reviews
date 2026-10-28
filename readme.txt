@@ -4,7 +4,7 @@ Tags: book, review, rezension, buch, schema, isbn, rating
 Requires at least: 6.4
 Tested up to: 6.8
 Requires PHP: 8.2
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,6 +71,12 @@ vollständig erhalten. Ein Rollback zum alten Plugin ist jederzeit möglich.
    Shortcodes funktionieren über die Legacy-Aliase weiter.
 
 == Changelog ==
+
+= 1.1.2 =
+* Buchbox: Der Buchtitel wird nicht mehr ein zweites Mal als Überschrift
+  innerhalb der Box angezeigt – auf der Rezensionsseite steht der Titel
+  nur noch einmal als Beitragstitel. Das schema.org-Book-Markup der Box
+  behält den Namen über ein unsichtbares meta-Tag
 
 = 1.1.1 =
 * Das Roh-Panel „Individuelle Felder“ (kryptische rcno_-Kodierungen
