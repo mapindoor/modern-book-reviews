@@ -1,0 +1,515 @@
+/**
+ * Modern Book Reviews – öffentliche Styles
+ *
+ * Farben über CSS-Variablen (--mbr-star-color wird vom Plugin
+ * aus validierten Hex-Werten gesetzt).
+ */
+
+.mbr-review-box {
+	background: #fafafa;
+	border: 1px solid #e5e5e5;
+	border-radius: 8px;
+	padding: 1.5rem;
+	margin: 1.5rem 0;
+}
+
+.mbr-review-box-inner {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+}
+
+.mbr-review-cover {
+	flex: 0 0 auto;
+	max-width: 220px;
+	text-align: center;
+}
+
+.mbr-review-rating-admin {
+	margin: 0.5rem 0 0;
+}
+
+.mbr-cover-image {
+	max-width: 100%;
+	height: auto;
+	border-radius: 4px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.mbr-review-details {
+	flex: 1 1 280px;
+	min-width: 260px;
+}
+
+.mbr-review-book-title {
+	margin: 0 0 0.5rem;
+	font-size: 1.3em;
+}
+
+.mbr-review-meta {
+	margin: 0.25rem 0;
+	font-size: 0.95em;
+}
+
+.mbr-review-meta-label {
+	display: inline-block;
+	min-width: 6.5em;
+	font-weight: 600;
+}
+
+/* Sterne */
+.mbr-stars {
+	position: relative;
+	display: inline-block;
+	line-height: 1;
+	font-size: 1.15em;
+	letter-spacing: 1px;
+	padding: 0.15em 0.3em;
+	border-radius: 3px;
+	background: var(--mbr-star-bg, transparent);
+}
+
+.mbr-stars::before {
+	content: "★★★★★";
+	color: #d9d9d9;
+}
+
+.mbr-stars-fill {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	color: var(--mbr-star-color, #f5a623);
+}
+
+.mbr-stars-fill::before {
+	content: "★★★★★";
+}
+
+.mbr-review-rating-count {
+	font-size: 0.85em;
+	color: #666;
+	margin-left: 0.4em;
+}
+
+/* Kleine Detailzeilen (ISBN, ISBN-13, Buch-URL) unter der Beschreibung */
+.mbr-review-meta-small {
+	font-size: 0.85em;
+	color: #666;
+}
+
+.mbr-review-meta-small a {
+	word-break: break-all;
+}
+
+/* Buchbeschreibung in der Box (wie im Original) */
+.mbr-book-description {
+	margin-top: 0.75rem;
+	font-size: 0.95em;
+	line-height: 1.55;
+}
+
+/* Kauf-Links */
+.mbr-purchase-links {
+	margin-top: 1rem;
+}
+
+.mbr-purchase-button {
+	display: inline-block;
+	margin: 0.25rem 0.4rem 0.25rem 0;
+	padding: 0.35rem 0.9rem;
+	background: var(--mbr-purchase-bg, #ededed);
+	color: var(--mbr-purchase-text, #171717) !important;
+	border-radius: 4px;
+	text-decoration: none;
+	font-size: 0.9em;
+	transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.mbr-purchase-button:hover,
+.mbr-purchase-button:focus {
+	opacity: 0.85;
+}
+
+/* Kriterien-Box */
+.mbr-score-box {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-top: 1.25rem;
+	border-top: 1px solid #e5e5e5;
+	padding-top: 1rem;
+}
+
+.mbr-score-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: var(--mbr-score-bg, #fff);
+	border: 1px solid var(--mbr-score-accent, #e5e5e5);
+	border-radius: 6px;
+	padding: 0.5rem 1rem;
+	min-width: 90px;
+}
+
+.mbr-score-value {
+	font-weight: 700;
+	font-size: 1.4em;
+	margin-top: 0.2rem;
+	color: var(--mbr-score-accent, #212121);
+}
+
+.mbr-score-item .mbr-score-value.accent-2 {
+	color: var(--mbr-score-accent-2, var(--mbr-score-accent, #212121));
+}
+
+/* Kommentar-Bewertung */
+.mbr-comment-rating-stars {
+	display: inline-flex;
+	flex-direction: row-reverse;
+	gap: 0.15rem;
+	vertical-align: middle;
+}
+
+.mbr-comment-rating-stars input {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.mbr-comment-rating-stars label {
+	cursor: pointer;
+	color: #d9d9d9;
+	font-size: 1.3em;
+	line-height: 1;
+}
+
+.mbr-comment-rating-stars label:hover,
+.mbr-comment-rating-stars label:hover ~ label,
+.mbr-comment-rating-stars input:checked ~ label,
+.mbr-comment-rating-stars input:checked + label {
+	color: var(--mbr-star-color, #f5a623);
+}
+
+.mbr-comment-rating-result {
+	margin: 0 0 0.5rem;
+	color: #666;
+	font-size: 0.9em;
+}
+
+/* Grid-Shortcode */
+.mbr-reviews-grid {
+	display: grid;
+	grid-template-columns: repeat(var(--mbr-grid-columns, 4), 1fr);
+	gap: 1.25rem;
+	margin: 1.5rem 0;
+}
+
+.mbr-grid-item {
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+	color: inherit;
+	text-align: center;
+}
+
+.mbr-grid-cover {
+	display: block;
+	margin-bottom: 0.5rem;
+}
+
+.mbr-grid-item .mbr-cover-image {
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mbr-grid-title {
+	font-weight: 600;
+	line-height: 1.3;
+}
+
+.mbr-grid-authors {
+	font-size: 0.85em;
+	color: #666;
+}
+
+@media (max-width: 600px) {
+	.mbr-reviews-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Archiv-Auszug (Legacy-Einstellung „Nur ein Auszug der Rezension"). */
+.mbr-archive-excerpt {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 1.25rem;
+	margin: 0 0 2.5rem;
+	padding-bottom: 2.5rem;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mbr-archive-excerpt-cover {
+	flex: 0 0 auto;
+	max-width: 140px;
+}
+
+.mbr-archive-excerpt-cover .mbr-cover-image {
+	width: 100%;
+	height: auto;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.mbr-archive-excerpt-body {
+	flex: 1 1 220px;
+	min-width: 0;
+}
+
+.mbr-archive-excerpt-title {
+	margin: 0 0 0.5rem;
+	font-size: 1.3em;
+}
+
+.mbr-archive-excerpt-title a {
+	text-decoration: none;
+}
+
+.mbr-archive-excerpt-more a {
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.mbr-archive-excerpt p {
+	margin: 0 0 0.5rem;
+}
+
+/* ---------------- Vorlagen (Legacy: rcno_review_template) ---------------- */
+
+/* Basic: minimal, ohne Rahmen */
+.mbr-template-basic {
+	background: transparent;
+	border: none;
+	padding: 0.5rem 0;
+}
+
+/* Metamor: Karte mit farbigem Kopfstreifen */
+.mbr-template-metamor {
+	background: #fff;
+	border: none;
+	border-top: 4px solid var(--mbr-score-accent-2, var(--mbr-star-color, #f5a623));
+	border-radius: 8px;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Insert: transparent, im Textfluss */
+.mbr-template-insert {
+	background: transparent;
+	border: none;
+	padding: 0;
+	margin: 1rem 0;
+}
+
+/* Simple: weiße Karte mit Schatten */
+.mbr-template-simple {
+	background: #fff;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Inverse: dunkle Box, heller Text */
+.mbr-template-inverse {
+	background: #1f2430;
+	border-color: #1f2430;
+	color: #e8eaf0;
+}
+
+.mbr-template-inverse .mbr-review-meta,
+.mbr-template-inverse .mbr-review-meta-small,
+.mbr-template-inverse .mbr-book-description,
+.mbr-template-inverse .mbr-review-rating-count,
+.mbr-template-inverse .mbr-grid-authors {
+	color: #b9bfc9;
+}
+
+.mbr-template-inverse .mbr-score-item {
+	background: #2a3040;
+	border-color: #3a4152;
+}
+
+/* ---------------- Buch-Slider-Widget ---------------- */
+
+.mbr-book-slider {
+	display: flex;
+	gap: 1rem;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	padding: 0.5rem 0 1rem;
+	-webkit-overflow-scrolling: touch;
+}
+
+.mbr-slider-item {
+	flex: 0 0 auto;
+	width: 130px;
+	scroll-snap-align: start;
+	text-decoration: none;
+	color: inherit;
+	text-align: center;
+}
+
+.mbr-slider-item .mbr-cover-image {
+	width: 100%;
+	height: auto;
+}
+
+.mbr-slider-title {
+	display: block;
+	margin-top: 0.4rem;
+	font-size: 0.85em;
+	line-height: 1.3;
+	font-weight: 600;
+}
+
+/* ---------------- Rezensions-Index ([mbr-reviews-index]) ---------------- */
+
+.mbr-reviews-index {
+	margin: 1.5rem 0;
+}
+
+.mbr-index-letter {
+	margin: 1.5rem 0 0.5rem;
+	font-size: 1.2em;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	padding-bottom: 0.25rem;
+}
+
+.mbr-index-group {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem 1.5rem;
+}
+
+.mbr-index-item {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.mbr-index-cover .mbr-cover-image {
+	max-width: 46px;
+}
+
+.mbr-index-title a {
+	text-decoration: none;
+}
+
+/* ---------------- Widgets ---------------- */
+
+.mbr-widget-recent-reviews,
+.mbr-widget-taxonomy-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.mbr-widget-review-item {
+	margin-bottom: 0.4rem;
+}
+
+.mbr-widget-review-link {
+	text-decoration: none;
+}
+
+.mbr-widget-review-rating .mbr-stars {
+	font-size: 0.8em;
+}
+
+.mbr-widget-count {
+	color: #666;
+}
+
+.mbr-widget-tag-cloud a {
+	text-decoration: none;
+	margin-right: 0.35em;
+}
+
+/* Autorenbox (Erweiterung) */
+.mbr-author-box {
+	display: flex;
+	gap: 16px;
+	align-items: flex-start;
+	margin: 2rem 0 1rem;
+	padding: 16px 20px;
+	background: #f7f7f7;
+	border: 1px solid #e2e4e7;
+	border-radius: 4px;
+}
+
+.mbr-author-box .mbr-author-avatar {
+	border-radius: 4px;
+	flex: 0 0 auto;
+}
+
+.mbr-author-box .mbr-author-name {
+	margin: 0 0 4px;
+	font-size: 1.15em;
+}
+
+.mbr-author-box .mbr-author-bio {
+	margin: 0 0 8px;
+	font-size: 0.95em;
+}
+
+.mbr-author-box .mbr-author-links {
+	margin: 0;
+}
+
+.mbr-author-link {
+	display: inline-block;
+	margin-right: 10px;
+	font-size: 0.85em;
+	text-decoration: none;
+}
+
+/* Social-Media-Sharing (Erweiterung) */
+.mbr-share-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 1rem 0;
+}
+
+.mbr-share-btn {
+	display: inline-block;
+	padding: 6px 14px;
+	border-radius: 3px;
+	background: var(--mbr-share-color, #6c7789);
+	color: #fff !important;
+	font-size: 0.85em;
+	font-weight: 600;
+	text-decoration: none;
+	transition: opacity 0.2s ease;
+}
+
+.mbr-share-btn:hover,
+.mbr-share-btn:focus {
+	opacity: 0.85;
+	color: #fff;
+}
+
+/* Bewertungskriterien: Sterne-Typ */
+.mbr-score-item .mbr-stars {
+	font-size: 1em;
+}
+
+/* Dunkles Template: helle Flächen */
+.mbr-template-inverse .mbr-author-box {
+	background: #2a3040;
+	border-color: #3a4152;
+	color: #e8eaf0;
+}

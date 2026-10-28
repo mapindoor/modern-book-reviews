@@ -1,0 +1,40 @@
+/**
+ * Modern Book Reviews – Erweiterungen-Seite (Karten-Layout wie Original).
+ */
+
+.mbr-ext-card {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	padding: 16px 20px;
+	margin: 12px 0;
+	max-width: 760px;
+}
+
+.mbr-ext-card h2 {
+	margin-top: 0;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.mbr-ext-badge {
+	font-size: 11px;
+	font-weight: 600;
+	padding: 2px 8px;
+	border-radius: 10px;
+}
+
+.mbr-ext-on {
+	background: #c6e1c6;
+	color: #1c5c1c;
+}
+
+.mbr-ext-off {
+	background: #f0c9c9;
+	color: #8a2424;
+}
+
+.mbr-ext-card p {
+	color: #50575e;
+}

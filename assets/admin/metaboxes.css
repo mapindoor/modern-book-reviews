@@ -1,0 +1,177 @@
+/**
+ * Modern Book Reviews – Metabox-Styles im Original-Layout
+ * (Recencio Book Reviews) für den Rezensions-Editor.
+ */
+
+/* -------- Allgemeine Information: Flex-Raster wie im Original -------- */
+
+.mbr-general-info-metaboxes input[type="text"] {
+	width: 100%;
+}
+
+.mbr-general-metabox-1 {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin: 0 0 1em 0;
+}
+
+.mbr-general-metabox-1 label {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: block;
+	margin-bottom: 4px;
+	font-weight: 600;
+}
+
+.mbr-general-metabox-1 .mbr-general-field {
+	display: inline-block;
+	position: relative;
+	margin: 1em 5px 0 0;
+}
+
+.mbr-general-metabox-1 .book-title {
+	flex: 1 1 30%;
+}
+
+.mbr-general-metabox-1 .illustrator-info,
+.mbr-general-metabox-1 .publication-date,
+.mbr-general-metabox-1 .publication-format,
+.mbr-general-metabox-1 .publication-edition {
+	flex: 1 1 14%;
+}
+
+.mbr-general-metabox-1 .publication-page-count,
+.mbr-general-metabox-1 .publication-series-number {
+	flex: 0 1 9%;
+}
+
+.mbr-general-metabox-1 .publication-gr-id,
+.mbr-general-metabox-1 .publication-isbn13,
+.mbr-general-metabox-1 .publication-asin {
+	flex: 1 1 15%;
+}
+
+.mbr-general-metabox-1 .publication-gr-review {
+	flex: 1 1 9%;
+}
+
+.mbr-general-metabox-1 .publication-gr-url {
+	flex: 1 1 39%;
+}
+
+/* -------- Bewertung der Besprechung -------- */
+
+.mbr-review-score-container {
+	display: flex;
+	gap: 1em;
+}
+
+.mbr-review-score-options {
+	width: 25%;
+}
+
+.mbr-review-score-enable,
+.mbr-review-score-type,
+.mbr-review-score-position {
+	margin: 0 0 15px 0;
+}
+
+.mbr-review-score-options label {
+	display: block;
+	margin-bottom: 4px;
+	font-weight: 600;
+}
+
+.mbr-review-score-table {
+	width: 74%;
+}
+
+@media (max-width: 782px) {
+	.mbr-review-score-container {
+		flex-direction: column;
+	}
+
+	.mbr-review-score-options,
+	.mbr-review-score-table {
+		width: 100%;
+	}
+}
+
+/* -------- Kriterien-/Kauflink-Tabellen (Original-Stil) -------- */
+
+table.mbr-repeatable {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table.mbr-repeatable th,
+table.mbr-repeatable td {
+	padding: 6px 4px;
+	vertical-align: middle;
+}
+
+table.mbr-repeatable thead th {
+	text-align: left;
+	font-weight: 600;
+}
+
+/* -------- ISBN -------- */
+
+.mbr-isbn-metabox input[type="text"] {
+	width: 68%;
+	margin-right: 4px;
+}
+
+.mbr-isbn-metabox-error {
+	margin-top: 8px;
+	padding: 3px;
+	text-align: center;
+	border-radius: 2px;
+	background: #fbeaea;
+	color: #a00;
+}
+
+/* -------- Buchdeckel -------- */
+
+.mbr-book-cover-container img {
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	margin-bottom: 8px;
+}
+
+/* -------- 5-Sterne-Bewertung -------- */
+
+#mbr-star-rating {
+	display: block;
+	margin: 4px 0 8px;
+	user-select: none;
+}
+
+#mbr-star-rating .mbr-star {
+	position: relative;
+	display: inline-block;
+	font-size: 25px;
+	line-height: 1;
+	cursor: pointer;
+	padding-right: 2px;
+}
+
+#mbr-star-rating .mbr-star-bg {
+	color: #ccc;
+}
+
+#mbr-star-rating .mbr-star-fill {
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	color: #ffd700;
+	width: 0;
+}
+
+/* Eigene Metadaten-Felder (Erweiterung) im Raster */
+.mbr-general-metabox-1 .mbr-custom-field {
+	flex: 1 1 30%;
+}
