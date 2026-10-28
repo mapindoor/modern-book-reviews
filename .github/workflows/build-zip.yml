@@ -5,6 +5,11 @@ on:
     tags:
       - 'v*'
   workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag für das Release (z. B. v1.1.1)'
+        required: true
+        default: 'v1.1.1'
 
 jobs:
   build:
@@ -23,4 +28,5 @@ jobs:
       - name: Attach ZIP to release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ inputs.tag || github.ref_name }}
           files: modern-book-reviews.zip
