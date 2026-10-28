@@ -222,7 +222,13 @@ final class ReviewBox {
 				<?php endif; ?>
 
 				<div class="mbr-review-details">
-					<h2 class="mbr-review-book-title" itemprop="name"><?php echo esc_html( $book_title ); ?></h2>
+                    <?php
+                    // Der Buchtitel wird bewusst nicht noch einmal als sichtbare
+                    // Überschrift ausgegeben: Auf der Rezensionsseite steht der
+                    // Titel bereits als Beitragstitel. Für das schema.org-Book-
+                    // Markup bleibt der Name über das unsichtbare meta-Tag erhalten.
+                    ?>
+                    <meta itemprop="name" content="<?php echo esc_attr( $book_title ); ?>" />
 
 					<?php if ( '' !== $authors ) : ?>
 						<p class="mbr-review-authors">
